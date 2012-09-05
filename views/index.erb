@@ -1,0 +1,42 @@
+<div id="stats-bar">
+  Welcome, User
+  <ul id="stats-list">
+    <li class='turns'>Turn <span class='turn-count'>0</span>/25</li>
+    <li class='cash'>$100</li>
+    <li class='controls'>&nbsp;</li>
+    <li class='phase'>Phase</li>
+  </ul>
+</div>
+
+<div class='game-active'>
+  <h2>Market</h2>
+  <div id='market'>
+  </div>
+</div>
+
+<h2>Owned</h2>
+<div id='owned'></div>
+
+<div class='game-active'>
+  <h2>Dice</h2>
+  <div id='diceholder'>
+    <div id='die-1' class='dice'></div>
+    <div id='die-2' class='dice'></div>
+  </div>
+</div>
+
+<div class='game-inactive'>
+  Game Over!
+</div>
+<!-- templates -->
+<script id="template-mine" type="text/x-jquery-tmpl">
+  <div class="mine" id="mine-${id}">
+    <div class="target">${target}</div>
+    <div class="payoff">${payoff}</div>
+    <div class="bid-price">$${bid_price}</div>
+    <div class="broken">${broken}</div>
+  </div>
+</script>
+<script id="template-control-button" type="text/x-jquery-tmpl">
+  <a class="control-button" data-control="${control}" data-value="${value}">${title}</a>
+</script>

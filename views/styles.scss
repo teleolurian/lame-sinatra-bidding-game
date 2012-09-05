@@ -1,0 +1,178 @@
+// Global
+html {
+  body {
+    background-color: #333;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: Helvetica, sans-serif;
+    margin-top: 35px;
+    .game-active { display: block; }
+    .game-inactive { display: none; }
+   
+    &.gameover {
+     .game-active { display: none; }
+     .game-inactive { display: block; }
+    }
+  }
+
+  .game-inactive {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+  }
+
+  div#stats-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: black;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    ul {
+      margin: 0;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      li {
+        border-left: 1px dotted #333;
+        padding-left: 20px;
+        display: inline-block; 
+        width: 150px;
+        height: 30px;
+      } 
+    }
+    a.control-button {
+      background-color: #aaa;
+      color: #000;
+      border-radius: 5px;
+      padding: 2px;
+      cursor: pointer;
+      &.i-am-the-only-way {
+        background-color: #0f0; 
+      }
+      &:active { background-color: #707; }
+      &:hover { background-color: #fff; }
+    }
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  div#market, div#owned {
+    text-align: center;
+    background-color: #222;
+    min-height: 100px;
+  }
+  
+  div#diceholder {
+    text-align: center;
+  }
+  
+  div.dice {
+    background: image-url('/dice.jpg');
+    width: 118px;
+    height: 118px;
+    display: inline-block;
+    margin: 10px 10px;
+    border-radius: 7px;
+    background-position: 50px 50px;
+    &.side-1 { background-position: -98px -45px; }
+    &.side-2 { background-position: -283px -45px; }
+    &.side-3 { background-position: -98px -193px; }
+    &.side-4 { background-position: -283px -193px; }
+    &.side-5 { background-position: -98px -342px; }
+    &.side-6 { background-position: -283px -342px; }
+  }
+
+  div.mine {
+    width: 100px;
+    height: 100px;
+    background-color: #797;
+    position: relative;
+    box-shadow: 2px 2px 4px #000;
+    margin: 5px 5px;
+    display: inline-block;
+    z-index: 100;
+    
+    //paid-off styles
+    &.jackpot {
+      &:before {
+        display: block;
+        background: image-url('/awesome.jpg');
+        width: 48px;
+        height: 48px;
+        background-position: -1px -1px;
+        top: 24px;
+        left: 29px;
+        border: 0;
+        content: '';
+        z-index: 1000;
+        position: relative;
+        border-radius: 20px;
+      }
+    }
+    
+    &.slated-for-destruction {
+      background-color: #f00;
+    }
+    
+    &.selectable {
+      &:hover {
+        background-color: #0f0;
+      }
+    }
+    
+    div.target, div.payoff, div.bid-price, div.broken {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      box-shadow: 2px 2px 4px #000;
+      font-size: 22px;
+      text-align: center;
+      vertical-align: middle;
+      
+      &:after {
+        width: 100%;
+        height: 10px;
+        font-size: 8px;
+        display: block;
+        background-color: transparent; 
+      }
+    }
+    
+    div.target {
+      top: 5px;
+      left: 5px;
+      background-color: #277;
+      &:after { content: 'Target'; }
+    }
+    
+    div.payoff {
+      top: 5px;
+      right: 5px;
+      background-color: #338;
+      &:after { content: 'Payoff'; }
+    }
+    
+    div.bid-price {
+      bottom: 5px;
+      right: 5px;
+      background-color: #383;
+      &:after { content: 'Bid'; }
+    }
+    
+    div.broken {
+      bottom: 5px;
+      left: 5px;
+      background-color: #900;
+      &:after { content: 'Break'; }
+    }
+  } // div.mine
+} // html
+
